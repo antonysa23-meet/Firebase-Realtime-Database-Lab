@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Tweets</title>
+</head>
+<body>
+<ol>
+{% for tweet in tweets%}
+<li>
+<ul>
+<li>	{{tweets[tweet]['title']}} :</li>
+<li>	{{tweets[tweet]['text']}}</li>
+<li>	{{tweets[tweet]['date']}}</li>
+<li>	{{tweets[tweet]['likes']}}</li>
+<div>
+	<form method="post" action="/add_like/{{tweet}}">
+            <input type="submit"/>
+        </div>
+    </form>
+</ul>
+</li>
+{% endfor %}
+</ol>
+</body>
+</html>
